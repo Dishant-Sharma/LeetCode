@@ -10,5 +10,7 @@ class Solution:
                 return i
             
             left_sum += nums[i]
-            
+         
         return -1
+        
+        
