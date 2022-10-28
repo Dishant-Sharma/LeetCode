@@ -13,18 +13,21 @@ class Node:
 class Solution:
     #Function to return list containing elements of right view of binary tree.
     def rightView(self,root):
+        memo={}
         ans=[]
-        self.rightSide(root,0,ans)
+        self.rightSide(root,0,memo,ans)
         return ans
     
-    def rightSide(self,root,currentLevel,ans):
+    def rightSide(self,root,currentLevel,memo,ans):
         if root is None:
             return
-        if len(ans)==currentLevel:
+        if currentLevel not in memo:
+            memo[currentLevel]=root.data
             ans.append(root.data)
         
-        self.rightSide(root.right,currentLevel+1,ans)
-        self.rightSide(root.left,currentLevel+1,ans)
+        self.rightSide(root.right,currentLevel+1,memo,ans)
+        self.rightSide(root.left,currentLevel+1,memo,ans)
+    # code here
         # code here
 
 
