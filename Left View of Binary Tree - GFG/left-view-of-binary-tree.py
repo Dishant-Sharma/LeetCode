@@ -12,21 +12,19 @@ class Node:
 
 #Function to return a list containing elements of left view of the binary tree.
 def LeftView(root):
-    
-    memo={}
+    #constant space solution using ans list only
     ans=[]
-    leftSide(root,0,memo,ans)
+    leftSide(root,0,ans)
     return ans
     
-def leftSide(root,currentLevel,memo,ans):
+def leftSide(root,currentLevel,ans):
     if root is None:
         return
-    if currentLevel not in memo:
-        memo[currentLevel]=root.data
+    if len(ans)==currentLevel:
         ans.append(root.data)
         
-    leftSide(root.left,currentLevel+1,memo,ans)
-    leftSide(root.right,currentLevel+1,memo,ans)
+    leftSide(root.left,currentLevel+1,ans)
+    leftSide(root.right,currentLevel+1,ans)
     # code here
 
 
