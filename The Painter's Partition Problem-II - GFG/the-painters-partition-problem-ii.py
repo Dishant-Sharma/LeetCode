@@ -6,8 +6,8 @@ class Solution:
         end=self.findSum(arr) # to get the total sum
         answer=-1
         
-        # if M>N: 
-        #     return answer
+        # if k>n: 
+        #     return answer # this corner 
             
         while start<=end: 
             mid=start+(end-start)//2
