@@ -5,9 +5,6 @@ class Solution:
         start=0
         end=self.findSum(arr) # to get the total sum
         answer=-1
-        
-        # if k>n: 
-        #     return answer # this corner 
             
         while start<=end: 
             mid=start+(end-start)//2
